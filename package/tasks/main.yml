@@ -1,0 +1,36 @@
+---
+- name: install basic packages
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - command-not-found
+    - curl
+    - dnsutils
+    - dos2unix
+    - ethtool
+    - git
+    - icdiff
+    - inetutils-telnet
+    - less
+    - linux-tools
+    - lrzsz
+    - lsb-release
+    - lsof
+    - mtr
+    - net-tools
+    - netcat-openbsd
+    - nscd
+    - parted
+    - pciutils
+    - rsync
+    - screen
+    - silversearcher-ag
+    - strace
+    - subversion
+    - sysstat
+    - tcpdump
+    - tree
+    - tmux
+    - zip
+    - whois
+

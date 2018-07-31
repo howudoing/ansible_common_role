@@ -1,3 +1,5 @@
 ---
 dependencies:
   - { role: zshell, tags: ['zshell'] }
+  - { role: package, tags: ['package'] }
+
