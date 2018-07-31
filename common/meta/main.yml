@@ -1,0 +1,3 @@
+---
+dependencies:
+  - { role: zshell, tags: ['zshell'] }

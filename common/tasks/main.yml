@@ -1,0 +1,8 @@
+---
+- include: packages.yml
+  tags:
+    - packages
+
+- include: password.yml
+  tags:
+    - password

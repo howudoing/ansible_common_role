@@ -1,0 +1,39 @@
+---
+- name: install package
+  apt:
+    name: "{{ item }}"
+  loop:
+    - zsh
+    - curl
+
+- name: change default shell
+  user:
+    name: "{{ username }}"
+    shell: /bin/zsh
+
+- name: install oh-my-zsh
+  become_user: "{{ username }}"
+  shell: "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
+
+- name: install zsh-syntax-highlighting for debian8
+  get_url:
+    url: "{{ zsh_syntax_hl_jessie }}"
+    dest: /root/zsh-syntax-highlighting.deb
+  when: "'jessie' == ansible_distribution_release"
+
+- name: install zsh-syntax-highlighting for debian9
+  get_url:
+    url: "{{ zsh_syntax_hl_stretch }}"
+    dest: /root/zsh-syntax-highlighting.deb
+  when: "'stretch' == ansible_distribution_release"
+
+- name: install zsh-syntax-highlighting
+  apt:
+    deb: /root/zsh-syntax-highlighting.deb
+
+- name: template zshrc
+  template:
+    dest: /home/{{ username }}/.zshrc
+    src: zshrc.j2
+    owner: "{{ username }}"
+    group: "{{ username }}"

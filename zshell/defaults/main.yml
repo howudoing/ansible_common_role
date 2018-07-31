@@ -1,0 +1,4 @@
+---
+username: user_name
+zsh_syntax_hl_stretch: "http://mirror.yandex.ru/opensuse/repositories/shells:/zsh-users:/zsh-syntax-highlighting/Debian_9.0/amd64/zsh-syntax-highlighting_0.6.0+3.6_amd64.deb"
+zsh_syntax_hl_jessie: "http://ftp.gwdg.de/pub/opensuse/repositories/shells:/zsh-users:/zsh-syntax-highlighting/Debian_8.0/amd64/zsh-syntax-highlighting_0.6.0+3.1_amd64.deb"
